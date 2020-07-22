@@ -1,0 +1,30 @@
+  
+  // header style
+  mat-toolbar {
+    text-align: center;
+  }
+  
+  // random cat image style
+  .randomImg-style {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+  }
+
+  .row {
+    width: 100%;
+  }
+
+  // card style 
+  .card-style {
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
+  
+
+  // selected category images style
+  .image-style {
+    width: 100%;
+    height: 16vw;
+    object-fit: cover;
+  }

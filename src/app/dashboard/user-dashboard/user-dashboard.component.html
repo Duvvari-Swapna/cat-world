@@ -1,0 +1,39 @@
+<div>
+
+  <!-- Header of the dashboard with title -->
+  <mat-toolbar color="primary">
+    <span>Welcome To Cat World</span>
+  </mat-toolbar>
+
+  <!-- division to show randomcat on the dashboard and option to search and select category -->
+  <div class="row">
+    <div class="col-md-6">
+      <mat-card>
+        <img src={{catImage}} class="randomImg-style" />
+      </mat-card>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="outline">
+        <mat-select [formControl]="categoryCtrl" placeholder="Browse Category" #singleSelect>
+          <mat-option>
+            <ngx-mat-select-search [formControl]="categoryFilterCtrl"></ngx-mat-select-search>
+          </mat-option>
+    
+          <mat-option id="selected" *ngFor="let item of filteredCategories | async" [value]="item" (click)="showImages(item)">
+            {{item.name | titlecase}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <!-- division to show selected category images on the dashboard -->
+  <div class="row">
+    <div class="col-md-3" *ngFor="let img of imagesList">
+      <mat-card class="card-style">
+        <img src="{{img.url}}" class="image-style">
+      </mat-card>
+    </div>
+  </div>
+
+</div>

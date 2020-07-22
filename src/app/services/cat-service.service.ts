@@ -13,39 +13,38 @@ export class CatServiceService {
   constructor(private http: HttpClient, private error: ErrorService) { }
 
   getCatImage() {
-    console.log('service for accessing random image being called')
+    console.log('service for accessing random image being called');
     return this.http.get(`${environment.baseUrl}/images/search`)
       .pipe(
         map((data: Image) => {
-          if (data)
+          if (data) {
             return data;
+          }
         }),
         catchError(this.error.handleError)
       );
   }
   getCategories() {
-    console.log('service for accessing random image being called')
+    console.log('service for getting being called');
     return this.http.get(`${environment.baseUrl}/categories`)
       .pipe(
         map((data: Category) => {
           if (data) {
-            console.log('got the image');
+            return data;
           }
-          return data;
         }),
         catchError(this.error.handleError)
       );
   }
 
   getSelectedCategoryImg(category_id, limit) {
-    console.log('service for getting categories')
+    console.log('service for getting selected category images');
     return this.http.get(`${environment.baseUrl}/images/search?category_ids=${category_id}&limit=${limit}`)
       .pipe(
         map((data: Images) => {
           if (data) {
-            console.log('got the image');
+            return data;
           }
-          return data;
         }),
         catchError(this.error.handleError)
       );

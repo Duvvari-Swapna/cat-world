@@ -3,7 +3,7 @@ export interface Image {
     id: string;
     url: string;
     width: number;
-    height: number
+    height: number;
 }
 
 export interface Category {
@@ -17,5 +17,5 @@ export interface Images {
     id: string;
     url: string;
     width: number;
-    height: number
+    height: number;
 }

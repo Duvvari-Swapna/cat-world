@@ -2,7 +2,7 @@ import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // all the imported mat modules from @angular/material package
-import { 
+import {
   MatToolbarModule,
   MatCardModule,
   MatSelectModule,
@@ -22,7 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgxMatSelectSearchModule,
     ReactiveFormsModule
   ],
-  exports:[
+  exports: [
     MatToolbarModule,
     MatCardModule,
     MatSelectModule,

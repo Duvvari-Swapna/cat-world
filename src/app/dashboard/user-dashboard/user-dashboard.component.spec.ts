@@ -6,7 +6,6 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { By } from '@angular/platform-browser';
 
 
 describe('UserDashboardComponent', () => {
@@ -35,7 +34,6 @@ describe('UserDashboardComponent', () => {
   });
 
   it('should render title in a span tag', (() => {
-    const fixture = TestBed.createComponent(UserDashboardComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('span').textContent).toContain('Welcome To Cat World');
@@ -49,11 +47,11 @@ describe('UserDashboardComponent', () => {
 
   it('should check getRandomCatImg function', () => {
     component.getRandomCatImg();
-  })
-  
+  });
+
   it('should check getCategoriesList function', () => {
     component.getCategoriesList();
-  })
+  });
 
   it('should check showImages function when selected category has id', (() => {
     const selected = {
@@ -61,7 +59,7 @@ describe('UserDashboardComponent', () => {
       'name': 'boxes'
     };
     component.showImages(selected);
-  }))
+  }));
 
   it('should check showImages function when selected category has no id or undefined', (() => {
     const selected = {
@@ -69,11 +67,11 @@ describe('UserDashboardComponent', () => {
       'name': 'boxes'
     };
     component.showImages(selected);
-  }))
+  }));
 
   it('should check filterCategories function', () => {
     component.filterCategories();
-  })
+  });
 
 
 });

@@ -39,12 +39,12 @@ export class UserDashboardComponent implements OnInit, OnDestroy {
     this.getCategoriesList();
   }
 
-  // function to access randomcat object 
+  // function to access randomcat object
   getRandomCatImg() {
     this.service.getCatImage().subscribe((response: Image) => {
-      console.log('response from service', response)
+      console.log('response from service', response);
       this.catImage = response[0]['url'];
-    })
+    });
   }
 
   // function to get the categories list
@@ -60,7 +60,7 @@ export class UserDashboardComponent implements OnInit, OnDestroy {
         .subscribe(() => {
           this.filterCategories();
         });
-    })
+    });
   }
 
 
@@ -83,17 +83,17 @@ export class UserDashboardComponent implements OnInit, OnDestroy {
     );
   }
 
-  // function to get the images list of selected category 
+  // function to get the images list of selected category
   showImages(selected: Category) {
-    console.log('response of category', selected, selected.id)
+    console.log('response of category', selected, selected.id);
     if (selected.id !== null && selected.id !== undefined) {
-      let limit = 10;
+      const limit = 10;
       this.service.getSelectedCategoryImg(selected.id, limit).subscribe((response: Images) => {
         console.log(response);
         this.imagesList = response;
-      })
+      });
     } else {
-      console.log('selected category id is either null or undefined')
+      console.log('selected category id is either null or undefined');
     }
   }
 
